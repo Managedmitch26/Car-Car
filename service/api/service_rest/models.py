@@ -1,8 +1,5 @@
 from django.db import models
 
-class Status(models.Model):
-    id = models.PositiveSmallIntegerField(primary_key=True)
-    name = models.CharField(max_length=200)
 
 class AutomobileVO(models.Model):
     vin = models.CharField(max_length=17, unique=True)
@@ -11,7 +8,7 @@ class AutomobileVO(models.Model):
 class Technician(models.Model):
     first_name = models.CharField(max_length=200)
     last_name = models.CharField(max_length=200)
-    employee_id = models.CharField(max_length=200)
+    employee_id = models.PositiveIntegerField(primary_key=True)
 
 class Appointment(models.Model):
     date_name = models.DateTimeField()
@@ -24,18 +21,23 @@ class Appointment(models.Model):
         on_delete=models.CASCADE,
     )
 
-    status = models.ForeignKey(
-        Status,
-        related_name="appointments",
-        on_delete=models.CASCADE,
+    status = models.CharField(
+        max_length=20,
+        choices=[
+            ("created", "created"),
+            ("canceled", "canceled"),
+            ("finished", "finished"),
+        ],
+        default = "created"
     )
 
     def canceled(self):
-        status = Status.objects.get(name="canceled")
-        self.status = status
+        self.status = "canceled"
         self.save()
 
     def finished(self):
-        status = Status.objects.get(name="finished")
-        self.status = status
+        self.status = "finished"
         self.save()
+
+    def __str__(self):
+        return self.name
