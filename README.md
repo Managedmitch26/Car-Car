@@ -2,22 +2,27 @@
 
 Team:
 
+<<<<<<< HEAD
 * Joey Li - Sales
 * Mitchell Wong - Service
 
 
 ## How to Run this App
+=======
+* Person 1 - Which microservice?
+* Person 2 - Which microservice?
 
-1. Fork this repository
+## Design
+>>>>>>> parent of c536a27 (finished Sales microservice, inventory js files and my part of Readme.)
 
-2. Copy the HTTPS Clone link
+## Service microservice
 
-3. Go to your terminal, go to the folder you want the repository in and clone it into your computer:
-    - type this to clone it:
-    ```
-    git clone https://gitlab.com/li.joey.h/project-beta.git
-    ```
+Explain your models and integration with the inventory
+microservice, here.
 
+## Sales microservice
+
+<<<<<<< HEAD
 4. Go into the newly cloned repository:
 ```
 cd project-beta
@@ -270,3 +275,7 @@ This will return the value of creating that sale:
 Here in the Service microservice, we are going to take the in date from Inventory, such as the vehicles, and keep track of them through the VIN's. Through the VIN, were able to see if the customer is bringing in a vehicle that was sold through us. This allows us to flag them as a VIP.
 
 Customers who are flagged as VIP will be given special treatment when scheduling an appointment.
+=======
+Explain your models and integration with the inventory
+microservice, here.
+>>>>>>> parent of c536a27 (finished Sales microservice, inventory js files and my part of Readme.)

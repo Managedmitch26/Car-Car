@@ -10,6 +10,7 @@ function Nav() {
         </button>
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+<<<<<<< HEAD
           <div className="btn-group">
             <button type="button" className="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
               Salespeople
@@ -83,6 +84,8 @@ function Nav() {
               <li><a className="dropdown-item" href="/appointments/history">Service History</a></li>
             </ul>
           </div>
+=======
+>>>>>>> parent of c536a27 (finished Sales microservice, inventory js files and my part of Readme.)
           </ul>
         </div>
       </div>

@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import MainPage from './MainPage';
 import Nav from './Nav';
+<<<<<<< HEAD
 import SalespeopleList from './SaleseopleList';
 import SalespeopleForm from './SalespersonForm';
 import CustomerForm from './CustomerForm';
@@ -18,6 +19,8 @@ import AppointmentForm from './ServiceAppointmentForm';
 import TechnicianList from './TechnicianList';
 import AppointmentsList from './ServiceAppointmentsList';
 import ServiceHistoryList from './ServiceHistoryList';
+=======
+>>>>>>> parent of c536a27 (finished Sales microservice, inventory js files and my part of Readme.)
 
 function App() {
   return (
@@ -26,6 +29,7 @@ function App() {
       <div className="container">
         <Routes>
           <Route path="/" element={<MainPage />} />
+<<<<<<< HEAD
           <Route path="salespeople">
             <Route index element={<SalespeopleList />} />
             <Route path="form" element={<SalespeopleForm />} />
@@ -55,6 +59,8 @@ function App() {
           <Route path='technicians' element={<TechnicianList />} />
           <Route path='/appointments' element={<AppointmentsList />} />
           <Route path='/appointments/history' element={<ServiceHistoryList />} />
+=======
+>>>>>>> parent of c536a27 (finished Sales microservice, inventory js files and my part of Readme.)
         </Routes>
       </div>
     </BrowserRouter>

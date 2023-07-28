@@ -10,7 +10,7 @@ class AutomobileVO(models.Model):
 class Salesperson(models.Model):
     first_name = models.CharField(max_length=150)
     last_name = models.CharField(max_length=150)
-    employee_id = models.CharField(max_length=150, unique=True)
+    employee_id = models.CharField(max_length=150)
 
 class Customer(models.Model):
     first_name = models.CharField(max_length=150)
