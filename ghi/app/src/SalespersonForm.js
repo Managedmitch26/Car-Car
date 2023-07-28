@@ -6,7 +6,7 @@ function SalespeopleForm(){
     const [employeeId, setEmployeeId] = useState('')
 
     async function handleSubmit(event) {
-        event.preventDefault();
+        event.preventDefault()
         const data = {
             "first_name":firstName,
             "last_name":lastName,
@@ -54,7 +54,7 @@ function SalespeopleForm(){
         <div className="row">
             <div className="offset-3 col-6">
                 <div className="shadow p-4 mt-4">
-                    <h1>Add Employee</h1>
+                    <h1>Add a Salesperson</h1>
                     <form onSubmit={handleSubmit} id="create-location-form">
                     <div className="form-floating mb-3">
                         <input value={firstName} onChange={handleFirstName} placeholder="firstName" required type="text" name="firstName" id="firstName" className="form-control" />
