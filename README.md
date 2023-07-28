@@ -284,12 +284,13 @@ The Technician and Appointments models have HTTP request methods built into the 
 List Technicians: This is the endpoint that will bring up a list of all technicians in the inventory database. It can be accessed by the link listed above and as this is a GET function, you do not need to input Json to access the list.
 
 Create a technician: This will allow you to create a new technician and place it into your technicians list. Since this is a POST request, you need Json to input for insomnia. The Json code you will need to input is as follows:
-
+```
 {
 	"first_name": "Mitchell",
 	"last_name": "Wong",
 	"employee_id": 3
 }
+```
 
 You input their first and last name and assign them an id and hit submit. After that, your new technician is now created and located inside your database.
 
@@ -312,6 +313,8 @@ List service appointment: This returns a list of all created appointments. From 
 List service history: Once you select either finish or cancel, the appointment will be fufilled and disappear from the list. The service history list is where you can list out all of the appointments that have been created, canceled, or finished. It even comes with a search bar that allows you to search for appointments by VIN.
 
 Create a service appointment: Creating appointments is integral to CarCar. We want our customers, both new and returning, to be able to come to us for whatever issue their car might be causing. From the create page, we can input some general information about the vehicle as well as a date and time and schedule an appointment for them. To do so, you need to input the following Json:
+
+```
 {
 	"date_name": "2023-08-09 9:00",
 	"reason": "Engine",
@@ -319,6 +322,7 @@ Create a service appointment: Creating appointments is integral to CarCar. We wa
 	"customer": "Luke",
 	"technician": 1
 }
+```
 
 It is important to make sure you input the correct VIN so we can properly identify whether or not the customer should be treated as VIP or not. Not that all customers aren't treated with the best service possible...just some better than others.
 
