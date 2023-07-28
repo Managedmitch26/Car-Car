@@ -5,7 +5,7 @@ import SalespeopleList from './SaleseopleList';
 import SalespeopleForm from './SalespersonForm';
 import CustomerForm from './CustomerForm';
 import SalesForm from './SalesForm';
-import SalesList from './ListSales';
+import SalesList from './SalesList';
 import SalespeopleSalesList from './SalespersonSalesList';
 import AutomobileList from './AutomobileList';
 import ManufacturerList from './ManufacturerList';
