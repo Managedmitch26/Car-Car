@@ -5,6 +5,7 @@ function VehicleModelForm(){
     const [pictureURL, setPictureURL] = useState('')
     const [manufacturer, setManufacturer] = useState('')
     const [manufacturers, setManufacturers] = useState([])
+    const [hasSubmitted, setHadSubmitted] = useState(false)
 
     async function fetchManufacturer(){
         const url = 'http://localhost:8100/api/manufacturers/'
@@ -41,14 +42,14 @@ function VehicleModelForm(){
         }
 
         const response = await fetch(ModelUrl, fetchConfig)
-        window.location.reload()
+
         if (response.ok){
-            const newVehicleModel = await response.json()
-            console.log(newVehicleModel)
+            setModelName('')
+            setPictureURL('')
+            setManufacturer('')
+            setHadSubmitted(true)
         }
-        setModelName('')
-        setPictureURL('')
-        setManufacturer('')
+
 
     }
 
@@ -66,12 +67,19 @@ function VehicleModelForm(){
         setManufacturer(value)
     }
 
+    let messageClasses = 'alert alert-success d-none mb-0';
+    let formClasses = '';
+    if (hasSubmitted) {
+    messageClasses = 'alert alert-success mb-0';
+    formClasses = 'd-none';
+    }
+
     return(
         <div className="row">
             <div className="offset-3 col-6">
                 <div className="shadow p-4 mt-4">
                     <h1>Create a vehicle model</h1>
-                    <form onSubmit={handleSubmit} id="create-location-form">
+                    <form className={formClasses} onSubmit={handleSubmit} id="create-location-form">
                     <div className="form-floating mb-3">
                         <input onChange={handleModelName} placeholder="modelName" required type="text" name="modelName" id="modelName" className="form-control" />
                         <label htmlFor="modelName">Model name</label>
@@ -91,6 +99,9 @@ function VehicleModelForm(){
                     </div>
                     <button className="btn btn-primary">Create</button>
                     </form>
+                    <div className={messageClasses} id="success-message">
+                        Vehicle model successfully registered!
+                    </div>
                 </div>
             </div>
         </div>
@@ -99,4 +110,3 @@ function VehicleModelForm(){
 
 }
 export default VehicleModelForm
-
