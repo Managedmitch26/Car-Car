@@ -26,7 +26,8 @@ class TechnicianDetailEncoder(ModelEncoder):
 class AppointmentDetailEncoder(ModelEncoder):
     model = Appointment
     properties = [
-        "date_name",
+        "date",
+        # "time",
         "reason",
         "vin",
         "customer",
@@ -43,8 +44,11 @@ class AppointmentDetailEncoder(ModelEncoder):
 def api_list_appointments(request, employee_id=None):
     if request.method == "GET":
         appointments = Appointment.objects.filter(status="created")
+        # time = Appointment.objects.get(time)
+        # json_time = json.dumps(time, default=str)
         return JsonResponse(
             {"appointments": appointments},
+            # {"time": json_time},
             encoder=AppointmentDetailEncoder,
         )
     else:

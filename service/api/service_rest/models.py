@@ -11,7 +11,8 @@ class Technician(models.Model):
     employee_id = models.PositiveIntegerField(primary_key=True)
 
 class Appointment(models.Model):
-    date_name = models.DateTimeField()
+    date = models.DateField(null=True)
+    time = models.TimeField(null=True)
     reason = models.CharField(max_length=200)
     vin = models.CharField(max_length=17, unique=True)
     customer = models.CharField(max_length=200)
