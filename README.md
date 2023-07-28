@@ -45,7 +45,7 @@ CarCar is made up of 3 different microservices interacracting with one another t
 
 ## Intergration
 
-Our sales and service domains pull information from the inventory domain through a poller and displays everything on the front end through react. This is done through the inventory domain. Here is a record of all of the cars, salespeople, customers, and sales. The Sales domain polls the inventory domain for information about the automobiles.
+Our sales and service microservice pulls information from the inventory domain through a poller and displays everything on the front end through react. This is done through the inventory domain. Here is a record of all of the cars, salespeople, customers, and sales. The Sales and Service mciroservice polls the inventory domain for information about the automobiles. They get utilized in different ways such as monitoring the "sold" status and the VIN for sales, or just the VIN for Services. All of the information pulled and generated in the backend is then outputted to the website through React. From there, you get a visual list of everything in the databases along with forms to create more data to be used.
 
 ## Sales Microservice
 The Sales microservices contains 4 models: AutomobileVO, Salesperson, Customer, Sale. The view functions have the ability to handle GET, POST and DELETE request for the Salesperson, Customer and Sales model.
@@ -267,9 +267,11 @@ This will return the value of creating that sale:
 
 # Service Microservice
 
-Here in the Service microservice, we are going to take the in date from Inventory, such as the vehicles, and keep track of them through the VIN's. Through the VIN, were able to see if the customer is bringing in a vehicle that was sold through us. This allows us to flag them as a VIP.
+The Service Microservice contains the Appointments, Technician and AutomobileVO models. A foreign key was used within the Appointments model to access the information from the Technician Model. It also contains a poller to obtain information from the Automobile Model from the Inventory API, allowing me to not only access the information, but to utilize it into my microservice.
 
-Customers who are flagged as VIP will be given special treatment when scheduling an appointment. Being identified as a VIP comes with special perks like pizza and beverages while waiting for your vehicle.
+The Technician and Appointments models have HTTP request methods built into the views to list, add, or delete the data from the data base. The Appointment Model has a couple extra features that allow it to access a list of the "created" service appointments and select the option to label them as "canceled" or "finished. It then takes the "canceled" or "finished" appointment and puts it into a new list labeled "Appointment History". From here, you can see a list of all appointments that have been "created", "canceled", or "finished". This was all done by creating view functions to handle the requests and url paths to create the path to handle the view functions.
+
+## Using Insomnoa to send and view data in the Service microservice
 
 ## Technicians
 
