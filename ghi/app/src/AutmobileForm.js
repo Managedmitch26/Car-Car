@@ -6,6 +6,7 @@ function AutomobileForm(){
     const [vin, setVin] = useState('')
     const [models, setModels] = useState([])
     const [model, setModel] = useState('')
+    const [hasSignedUp, sethasSignedUp] = useState(false)
 
 
     async function fetchAutomobile(){
@@ -46,13 +47,13 @@ function AutomobileForm(){
         const response = await fetch(AutoUrl, fetchConfig)
 
         if (response.ok){
-            const newCustomer = await response.json()
-            console.log(newCustomer)
             setColor('')
             setYear('')
             setVin('')
             setModel('')
+            sethasSignedUp(true)
         }
+
 
     }
 
@@ -75,13 +76,19 @@ function AutomobileForm(){
         setModel(value)
     }
 
+    let messageClasses = 'alert alert-success d-none mb-0';
+    let formClasses = '';
+    if (hasSignedUp) {
+        messageClasses = 'alert alert-success mb-0';
+        formClasses = 'd-none';
+    }
 
     return(
         <div className="row">
             <div className="offset-3 col-6">
                 <div className="shadow p-4 mt-4">
                     <h1>Create an automobile</h1>
-                        <form onSubmit={handleSubmit} id="create-location-form">
+                        <form className={formClasses} onSubmit={handleSubmit} id="create-location-form">
                         <div className="form-floating mb-3">
                             <input onChange={handleColor} placeholder="color" required type="text" name="color" id="color" className="form-control" />
                             <label htmlFor="color">Color</label>
@@ -105,6 +112,9 @@ function AutomobileForm(){
                         </div>
                         <button className="btn btn-primary">Create</button>
                         </form>
+                        <div className={messageClasses} id="success-message">
+                            Automobile was created!
+                        </div>
                 </div>
             </div>
         </div>

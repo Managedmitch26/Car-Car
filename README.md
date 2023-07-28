@@ -306,3 +306,20 @@ Delete a technician: If you made a mistake when creating or a technician leaves 
 |Finish an appointment| PUT | http://localhost:8080/api/appointments/<int:id>/finish/
 
 List service appointment: This returns a list of all created appointments. From this list you can either select the options to cancel or finish the appointment.
+
+List service history: Once you select either finish or cancel, the appointment will be fufilled and disappear from the list. The service history list is where you can list out all of the appointments that have been created, canceled, or finished. It even comes with a search bar that allows you to search for appointments by VIN.
+
+Create a service appointment: Creating appointments is integral to CarCar. We want our customers, both new and returning, to be able to come to us for whatever issue their car might be causing. From the create page, we can input some general information about the vehicle as well as a date and time and schedule an appointment for them. To do so, you need to input the following Json:
+{
+	"date_name": "2023-08-09 9:00",
+	"reason": "Engine",
+	"vin": "1HGCP2F61CA266756",
+	"customer": "Luke",
+	"technician": 1
+}
+
+It is important to make sure you input the correct VIN so we can properly identify whether or not the customer should be treated as VIP or not. Not that all customers aren't treated with the best service possible...just some better than others.
+
+Delete an appointment: It's always good practice to have a function that allows you to delete an appointment from the database. This allows you to do just that by the url listed above.
+
+Cancel/finish an appointment: Once an appointment has been created, its important to resolve it as soon as you can. Even when the customer decides to cancel. This can be done by identifying the appointment ID and inputing either "cancel" or "finish" after the url path to put a status on the appointment and get it out of the list.

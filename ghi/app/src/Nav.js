@@ -69,7 +69,7 @@ function Nav() {
             Technicians
             </button>
             <ul className="dropdown-menu">
-              <li><a className="dropdown-item" href="/technicians/create">Add a Techniciant</a></li>
+              <li><a className="dropdown-item" href="/technicians/create">Add a Technician</a></li>
               <li><a className="dropdown-item" href="/technicians">Technicians</a></li>
             </ul>
           </div>
