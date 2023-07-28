@@ -77,13 +77,6 @@ def api_appointment_history(request):
             encoder=AppointmentDetailEncoder,
         )
 
-@require_http_methods(["DELETE"])
-def api_delete_appointment(request, id):
-    if request.method == "Delete":
-        count, _ = Appointment.objects.filter(id=id).delete()
-        return JsonResponse(
-            {"deleted": count > 0}
-        )
 
 @require_http_methods(["PUT"])
 def api_finished_appointment(request, id):
@@ -133,6 +126,14 @@ def api_list_technicians(request):
 def api_delete_technician(request, employee_id):
     if request.method == "DELETE":
         count, _ = Technician.objects.filter(employee_id=employee_id).delete()
+        return JsonResponse(
+            {"deleted": count > 0}
+        )
+
+@require_http_methods(["DELETE"])
+def api_delete_appointment(request, id):
+    if request.method == "DELETE":
+        count, _= Appointment.objects.filter(id=id).delete()
         return JsonResponse(
             {"deleted": count > 0}
         )

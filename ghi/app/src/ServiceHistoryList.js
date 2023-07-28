@@ -38,6 +38,7 @@ function ServiceHistoryList(props) {
     return (
         <><h1>Service History</h1>
             <input className="searchInput" type="search" placeholder="search" onChange={(e) => setSearchInput(e.target.value)} />
+            <button>Search</button>
         <table className="table table-striped">
             <thead>
                 <tr>

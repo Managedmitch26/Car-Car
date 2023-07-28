@@ -301,7 +301,7 @@ Delete a technician: If you made a mistake when creating or a technician leaves 
 |List service appointments| GET | http://localhost:8080/api/appointments/
 |Service appointment history| GET| http://localhost:8080/api/appointments/history
 |Create service appointment | POST | http://localhost:8080/api/appointments/create/
-|Delete service appointment | DELETE | http://localhost:8080/api/appointments/<int:id>
+|Delete service appointment | DELETE | http://localhost:8080/api/appointments/history/<int:id>/
 |Cancel an appointment| PUT | http://localhost:8080/api/appointments/<int:id>/cancel/
 |Finish an appointment| PUT | http://localhost:8080/api/appointments/<int:id>/finish/
 
