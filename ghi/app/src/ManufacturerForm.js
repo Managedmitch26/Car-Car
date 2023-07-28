@@ -28,7 +28,6 @@ function ManufacturerForm(){
         }
     }
 
-
     function handleName(event){
         const {value} = event.target
         setName(value)

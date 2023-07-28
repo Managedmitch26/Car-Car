@@ -51,7 +51,7 @@ function SalespeopleSalesList(){
         <option value="">Employee ID</option>
             {salespeople.map(person =>{
                         return(
-                <option key ={person.employee_id} value={person.employee_id}>{person.employee_id}</option>            )
+                <option key ={person.id} value={person.employee_id}>{person.employee_id}</option>            )
             }
             )}
             </select>
@@ -68,11 +68,12 @@ function SalespeopleSalesList(){
             <tbody>
                 {sales.filter(ids => ids.salesperson.employee_id ===salesperson?.toString() ).map(sale =>{
                     return(
-                        <tr key={sale.id +sale.automobile.vin}>
+                        <tr key={sale.id+sale.automobile.vin}>
                             <td>{sale.salesperson.first_name +" "+ sale.salesperson.last_name }</td>
                             <td>{sale.customer.first_name+" "+sale.customer.last_name}</td>
                             <td>{sale.automobile.vin}</td>
                             <td>{sale.price}</td>
+
                         </tr>
                     )
                     }

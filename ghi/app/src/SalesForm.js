@@ -63,7 +63,6 @@ function SalesForm(){
 
         }
 
-
         const SalesUrl = 'http://localhost:8090/api/sales/'
         const fetchConfig = {
         method: "post",
@@ -104,8 +103,6 @@ function SalesForm(){
         if (response.ok){
             const newCustomer = await autoresponse.json()
             console.log(newCustomer)
-
-
     }}
 
     function handleAutomobile(event){
@@ -133,7 +130,6 @@ function SalesForm(){
                 <div className="shadow p-4 mt-4">
                     <h1>Record a new sale</h1>
                     <form onSubmit={handleSubmit} id="create-location-form">
-                        <label>Automobile Vin</label>
                         <div className="form-floating mb-3">
                             <select value ={automobile} onChange={handleAutomobile} required name="automobile" id="automobile" className="form-select">
                             <option value="">Choose a vin</option>
@@ -144,7 +140,6 @@ function SalesForm(){
                             </select>
 
                         </div>
-                        <label>Salesperson</label>
                         <div className="form-floating mb-3">
                             <select value ={salesperson} onChange={handleSalespeople} required name="salesperson" id="salesperson" className="form-select">
                             <option value="">Choose a salesperson</option>
@@ -154,7 +149,6 @@ function SalesForm(){
                                 )})}
                             </select>
                         </div>
-                        <label>Customer</label>
                         <div className="form-floating mb-3">
                             <select value ={customer} onChange={handleCustomers} required name="customer" id="customer" className="form-select">
                             <option value="">Choose a customer</option>
@@ -164,7 +158,7 @@ function SalesForm(){
                                 )})}
                             </select>
                         </div>
-                        <label>Price (dont include commas)</label>
+                        <label>Do not include commas in price</label>
                         <div className="form-floating mb-3">
                             <input value={price} onChange={handlePrice} placeholder="price" required type="text" name="price" id="price" className="form-control" />
                             <label htmlFor="price">Price</label>
