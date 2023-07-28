@@ -3,7 +3,8 @@
 Team:
 
 * Joey Li - Sales
-* Person 2 - Which microservice?
+* Mitchell Wong - Service
+
 
 ## How to Run this App
  - Put instructions to build and run this app here
@@ -36,6 +37,18 @@ Team:
 ## Diagram
 
 ![ExcaliDraw Diagam](Screen%20Shot%202023-07-27%20at%206.18.18%20PM.png)
+
+ ## Value Objects
+ - Identification of value objects for each service goes here
+CarCar is made up of 3 different microservices interacracting with one another through react and polling.
+
+- Inventory
+- Service
+- Sales
+
+## Intergration
+
+Our sales and service domains pull information from the inventory domain through a poller and displays everything on the front end through react. This is done through the inventory domain. Here is a record of all of the cars, salespeople, customers, and sales. The Sales domain polls the inventory domain for information about the automobiles.
 
 ## Sales Microservice
 The Sales microservices contains 4 models: AutomobileVO, Salesperson, Customer, Sale. The views function has the ability to handle GET, POST and DELETE request for the Salesperson, Customer and Sales model.
@@ -255,18 +268,8 @@ This will return the value of creating that sale:
 }
 ```
 
+# Service Microservice
 
-### URLs and Ports
- - Put URLs and ports for services here
+Here in the Service microservice, we are going to take the in date from Inventory, such as the vehicles, and keep track of them through the VIN's. Through the VIN, were able to see if the customer is bringing in a vehicle that was sold through us. This allows us to flag them as a VIP.
 
-### Inventory API (Optional)
- - Put Inventory API documentation here. This is optional if you have time, otherwise prioritize the other services.
-
-### Service API
- - Put Service API documentation here
-
-### Sales API
- - Put Sales API documentation here
-
-## Value Objects
- - Identification of value objects for each service goes here
+Customers who are flagged as VIP will be given special treatment when scheduling an appointment.
