@@ -66,7 +66,7 @@ return(
           </div>
           <div className="form-floating mb-3">
             <input onChange={handleFormChange} placeholder="Employee_id" required type="text" name="employee_id" id="employee_id" className="form-control" />
-            <label htmlFor="employee_id">Employee id</label>
+            <label htmlFor="employee_id">Employee id (Numbers only)</label>
           </div>
           <button className="btn btn-primary">Create</button>
         </form>
