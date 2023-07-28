@@ -1,12 +1,11 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import MainPage from './MainPage';
 import Nav from './Nav';
-<<<<<<< HEAD
 import SalespeopleList from './SaleseopleList';
 import SalespeopleForm from './SalespersonForm';
 import CustomerForm from './CustomerForm';
 import SalesForm from './SalesForm';
-import SalesList from './SalesList';
+import SalesList from './ListSales';
 import SalespeopleSalesList from './SalespersonSalesList';
 import AutomobileList from './AutomobileList';
 import ManufacturerList from './ManufacturerList';
@@ -14,13 +13,7 @@ import VehicleModelList from './VehicleModelList';
 import ManufacturerForm from './ManufacturerForm';
 import AutomobileForm from './VehicleModelForm';
 import VehicleModelForm from './AutomobileForm';
-import TechnicianForm from './TechnicianForm';
-import AppointmentForm from './ServiceAppointmentForm';
-import TechnicianList from './TechnicianList';
-import AppointmentsList from './ServiceAppointmentsList';
-import ServiceHistoryList from './ServiceHistoryList';
-=======
->>>>>>> parent of c536a27 (finished Sales microservice, inventory js files and my part of Readme.)
+
 
 function App() {
   return (
@@ -29,7 +22,6 @@ function App() {
       <div className="container">
         <Routes>
           <Route path="/" element={<MainPage />} />
-<<<<<<< HEAD
           <Route path="salespeople">
             <Route index element={<SalespeopleList />} />
             <Route path="form" element={<SalespeopleForm />} />
@@ -54,13 +46,6 @@ function App() {
             <Route index element={<AutomobileList />} />
             <Route path="form" element={<VehicleModelForm />} />
           </Route>
-          <Route path='/technicians/create' element={<TechnicianForm />} />
-          <Route path="/appointments/create" element={<AppointmentForm />} />
-          <Route path='technicians' element={<TechnicianList />} />
-          <Route path='/appointments' element={<AppointmentsList />} />
-          <Route path='/appointments/history' element={<ServiceHistoryList />} />
-=======
->>>>>>> parent of c536a27 (finished Sales microservice, inventory js files and my part of Readme.)
         </Routes>
       </div>
     </BrowserRouter>
