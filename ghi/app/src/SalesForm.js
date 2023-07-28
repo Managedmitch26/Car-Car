@@ -100,9 +100,12 @@ function SalesForm(){
         }
 
         const autoresponse = await fetch(autoUrl, autofetchConfig)
+        window.location.reload()
         if (response.ok){
             const newCustomer = await autoresponse.json()
             console.log(newCustomer)
+
+
     }}
 
     function handleAutomobile(event){

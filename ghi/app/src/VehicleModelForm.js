@@ -20,6 +20,38 @@ function VehicleModelForm(){
     useEffect(() => {
         fetchManufacturer();
     }, [])
+
+
+    async function handleSubmit(event) {
+        event.preventDefault();
+        const data = {
+            "name":modelName,
+            "picture_url":pictureURL,
+            "manufacturer_id":manufacturer
+        }
+
+
+        const ModelUrl = 'http://localhost:8100/api/models/'
+        const fetchConfig = {
+        method: "POST",
+        body: JSON.stringify(data),
+        headers: {
+            'Content-Type': 'application/json',
+            }
+        }
+
+        const response = await fetch(ModelUrl, fetchConfig)
+        window.location.reload()
+        if (response.ok){
+            const newVehicleModel = await response.json()
+            console.log(newVehicleModel)
+        }
+        setModelName('')
+        setPictureURL('')
+        setManufacturer('')
+
+    }
+
     function handleModelName(event){
         const {value} = event.target
         setModelName(value)
@@ -32,37 +64,6 @@ function VehicleModelForm(){
     function handleManufacturer(event){
         const {value} = event.target
         setManufacturer(value)
-    }
-
-    async function handleSubmit(event){
-        event.preventDefault()
-        const data = {
-            "name":modelName,
-            "picture_url":pictureURL,
-            "manufacturer_id":manufacturer
-        }
-
-        const modelUrl = 'http://localhost:8100/api/models/'
-        const fetchConfig={
-            method: "post",
-            body: JSON.stringify(data),
-            headers: {
-                'Content-Type': 'application/json',
-            }
-        }
-
-        const modelresponse = await fetch(modelUrl, fetchConfig)
-
-        if (modelresponse.ok){
-            setManufacturer('')
-            const newModel = await modelresponse.json()
-            console.log(newModel)
-
-        }
-        else{
-            console.log('n')
-        }
-
     }
 
     return(
