@@ -41,6 +41,7 @@ function VehicleModelForm(){
         }
 
         const response = await fetch(ModelUrl, fetchConfig)
+        window.location.reload()
         if (response.ok){
             setModelName('')
             setPictureURL('')
